@@ -1,3 +1,3 @@
 # vuejs-playground
 
-testing
+yarn install
