@@ -1,14 +1,14 @@
 <template>
 	<div class="full-width center-content">
-		<hello-component name="World" />
+		<Dashboard name="World" />
 	</div>
 </template>
 
 <script>
-import HelloComponent from "./components/HelloComponent.vue";
+import Dashboard from "./components/Dashboard.vue";
 export default {
 	components: {
-		HelloComponent,
+		Dashboard,
 	},
 };
 </script>
