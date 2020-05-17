@@ -1,5 +1,6 @@
 <template>
 	<div class="full-width center-content">
+		<div class="title">Handy Dandy Habitica Helper</div>
 		<Dashboard name="World" />
 	</div>
 </template>
