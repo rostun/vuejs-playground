@@ -1,11 +1,11 @@
-<style src="../assets/Dashboard.styl"></style>
 <template>
 	<div class="UserDashboard">
-		<input v-model="username" placeholder="your username">
-		<p>username is: {{ username }}</p>
+		<input v-model="food_input" placeholder="food">
 
-		<button v-on:click="counter += 1">Add 1</button>
+		<button v-on:click="DisplayFood();">Calculate</button>
+		<p>your searched for: {{end_input}}</p>
 
 	</div>
 </template>
+<style src="../assets/Dashboard.styl"></style>
 <script src ="./Dashboard.js"></script>
