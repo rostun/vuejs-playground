@@ -1,6 +1,6 @@
 export default {
 	props: {
-		message: {
+		username: {
 			type: String,
 			required: true
 		}
