@@ -4,7 +4,8 @@
 
 		<button v-on:click="DisplayFood();">Calculate</button>
 		<p>your searched for: {{end_input}}</p>
-
+		<p>Pet Data: {{pet_data}}</p>
+		<p>Food Data: {{food_data}}</p>
 	</div>
 </template>
 <style src="../assets/Dashboard.styl"></style>

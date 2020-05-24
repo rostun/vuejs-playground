@@ -3,6 +3,8 @@ import axios from 'axios';
 export default {
    data() {
       return {
+         pet_data: {},
+         food_data: {},
          food_input: '',
          end_input: '',
       }
@@ -18,9 +20,10 @@ export default {
             ]
          })
          .then((response) => {
-            console.log(response);
+            this.food_data = response.data.food;
+            this.pet_data = response.data.pets;
          });
-         
+
          this.end_input = this.food_input;
       },
    },
