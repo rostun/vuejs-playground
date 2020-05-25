@@ -21,7 +21,7 @@ export default {
          })
          .then((response) => {
             this.food_data = response.data.food;
-            this.pet_data = response.data.pets;
+            this.pet_data = response.data.petInfo;
          });
 
          this.end_input = this.food_input;
