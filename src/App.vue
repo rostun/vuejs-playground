@@ -1,5 +1,5 @@
 <template>
-	<div class="full-width center-content">
+	<div class="full-width center-content font-style">
 		<div class="title">Handy Dandy Habitica Helper</div>
 		<Dashboard />
 	</div>

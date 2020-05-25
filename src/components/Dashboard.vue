@@ -6,7 +6,7 @@
 		</div>
 		<p>your searched for: {{end_input}}</p>
 		<div class="search_results">
-			<p class="pet_result">Pet Results</p>
+			<p class="pet_result">Pet Results!</p>
 			<ul id="example-1" class="pet_information">
 				<li v-for="pet in pet_data" :key="pet.key">{{ pet.text }}</li>
 			</ul>
