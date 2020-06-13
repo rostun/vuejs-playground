@@ -12,6 +12,7 @@ export default {
    methods: {
       DisplayFood() {
          axios.get('https://habitica.com/api/v3/content', {
+            crossDomain: true,
             transformResponse: [
                (data) => {
                   let _res = JSON.parse(data);
@@ -20,6 +21,7 @@ export default {
             ]
          })
          .then((response) => {
+            console.log(response);
             this.food_data = response.data.food;
             this.pet_data = response.data.petInfo;
          });
