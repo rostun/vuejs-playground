@@ -1,0 +1,21 @@
+.search_results
+   display flex
+   flex-direction row
+   .pet_result, .food_result
+      display flex
+      flex-direction column
+      flex-basis 100%
+      flex 1
+      p
+         text-align center
+      .pet_information, .food_information
+         display grid
+         grid-template-columns repeat(8, 1fr)
+         grid-gap 10px
+         grid-auto-rows 1fr
+         list-style-type none
+         padding 0
+         li
+            border 1px solid
+            padding 8px
+            border-radius 5px

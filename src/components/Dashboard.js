@@ -3,8 +3,6 @@ import axios from 'axios';
 export default {
    data() {
       return {
-         pet_data: {},
-         food_data: {},
          food_input: '',
          end_input: '',
       }
@@ -21,9 +19,8 @@ export default {
             ]
          })
          .then((response) => {
-            console.log(response);
-            this.food_data = response.data.food;
-            this.pet_data = response.data.petInfo;
+            this.$emit('foodData', response.data.food);
+            this.$emit('petData', response.data.petInfo);
          });
 
          this.end_input = this.food_input;
