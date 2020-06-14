@@ -1,8 +1,8 @@
 <template>
 	<div class="full-width center-content font-style">
 		<div class="title">Handy Dandy Habitica Helper</div>
-		<Dashboard @petData="setPetData" @foodData="setFoodData" />
-		<SearchResults :pet_data="pet_data" :food_data="food_data" />
+		<Dashboard @petData="setPetData" @foodData="setFoodData" @foodInput="setFoodInput" />
+		<SearchResults :pet_data="pet_data" :food_data="food_data" :food_input="food_input" />
 	</div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
       return {
 			pet_data: {},
 			food_data: {},
+			food_input: '',
       }
    },
 	components: {
@@ -23,11 +24,14 @@ export default {
 	},
 	methods: {
 		setPetData(pets) { 
-			this.pet_data = pets 
+			this.pet_data = pets;
 		},
 		setFoodData(food) {
-			this.food_data = food 
+			this.food_data = food; 
 		},
+		setFoodInput(input) {
+			this.food_input = input;
+		}
 	}
 };
 </script>

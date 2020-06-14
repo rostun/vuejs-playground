@@ -3,8 +3,8 @@ import axios from 'axios';
 export default {
    data() {
       return {
+         search_input: '',
          food_input: '',
-         end_input: '',
       }
    },
    methods: {
@@ -19,11 +19,12 @@ export default {
             ]
          })
          .then((response) => {
+            this.$emit('foodInput', this.food_input);
             this.$emit('foodData', response.data.food);
             this.$emit('petData', response.data.petInfo);
          });
 
-         this.end_input = this.food_input;
+         this.food_input = this.search_input;
       },
    },
 };
