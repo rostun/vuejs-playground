@@ -21,8 +21,12 @@ export default {
          const _pets = Object.values(this.pet_data);
 
          if(!_pets.length || this.food_input === null) return [];
-         
-         return _pets.filter((pet) => pet.potion.toLowerCase() === this.food_input.target.toLowerCase());
+         if(this.food_input.key === 'Saddle') return _pets;
+
+         return _pets.filter((pet) =>{
+            if(pet.type === 'special') return false;
+            return pet.potion.toLowerCase() === this.food_input.target.toLowerCase()
+         });
       },
    }
 };
