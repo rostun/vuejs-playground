@@ -3,8 +3,8 @@ import axios from 'axios';
 export default {
    data() {
       return {
-         select_input: '',
-         food_input: '',
+         select_input: {},
+         food_input: {},
          options: {},
       }
    },
@@ -23,13 +23,14 @@ export default {
             ]
          })
          .then((response) => {
-            this.food_input = this.select_input;
             this.options = response.data.food;
             this.$emit('foodData', response.data.food);
             this.$emit('petData', response.data.petInfo);
          });
       },
       SubmitFood() {
+         this.food_input = this.select_input;
+         console.log('this.food_input: ', this.food_input);
          this.$emit('foodInput', this.food_input);
       }
    },

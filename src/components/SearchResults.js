@@ -12,12 +12,17 @@ export default {
    methods: {
       filterFood() {
          const _foods = Object.values(this.food_data);
+         
+         if(!_foods.length || this.food_input === null) return [];
+         
          return _foods.filter((food) => food.key === this.food_input.key);
       },
       filterPets() {
          const _pets = Object.values(this.pet_data);
-         return [];
-         //this.pets_filtered = _pets.filter((pet)
+
+         if(!_pets.length || this.food_input === null) return [];
+         
+         return _pets.filter((pet) => pet.potion.toLowerCase() === this.food_input.target.toLowerCase());
       },
    }
 };

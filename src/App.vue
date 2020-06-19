@@ -15,7 +15,7 @@ export default {
       return {
 			pet_data: {},
 			food_data: {},
-			food_input: '',
+			food_input: null,
       }
    },
 	components: {
