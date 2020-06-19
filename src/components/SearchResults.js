@@ -12,8 +12,6 @@ export default {
    methods: {
       filterFood() {
          const _foods = Object.values(this.food_data);
-
-         console.log('hello');
          return _foods.filter((food) => food.key === this.food_input.key);
       },
       filterPets() {
