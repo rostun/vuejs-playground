@@ -2,7 +2,7 @@
 	<div class="Dashboard full-width">
 		<div class="search">
 			<select v-model="select_input">
-				<option disabled value="">Please select one</option>
+				<option :value="null" disabled>Select Food</option>
 				<option v-for="option in options" v-bind:value="{key: option.key, target: option.target, text: option.text}" :key="option.key">
 					{{ option.text }}
 				</option>

@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
    data() {
       return {
-         select_input: {},
+         select_input: null,
          food_input: {},
          options: {},
       }
@@ -30,7 +30,7 @@ export default {
       },
       SubmitFood() {
          this.food_input = this.select_input;
-         console.log('this.food_input: ', this.food_input);
+         console.log('this.food_input: ', this.food_input)
          this.$emit('foodInput', this.food_input);
       }
    },
