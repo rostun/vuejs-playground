@@ -8,8 +8,7 @@ export default {
       filterFood() {
          const _foods = Object.values(this.food_data);
 
-
-         return _foods.filter(food => food.text === this.food_input);
+         return _foods.filter(food => food.text.toLowerCase().includes(this.food_input.toLowerCase()));
       }
    }
 };
