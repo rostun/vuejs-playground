@@ -30,6 +30,7 @@ export default {
 			this.food_data = food; 
 		},
 		setFoodInput(input) {
+			console.log('hello again');
 			this.food_input = input;
 		}
 	}

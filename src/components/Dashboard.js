@@ -3,9 +3,13 @@ import axios from 'axios';
 export default {
    data() {
       return {
-         search_input: '',
+         select_input: '',
          food_input: '',
+         options: {},
       }
+   },
+   beforeMount() {
+      this.DisplayFood();
    },
    methods: {
       DisplayFood() {
@@ -19,12 +23,14 @@ export default {
             ]
          })
          .then((response) => {
-            this.$emit('foodInput', this.food_input);
+            this.food_input = this.select_input;
+            this.options = response.data.food;
             this.$emit('foodData', response.data.food);
             this.$emit('petData', response.data.petInfo);
          });
-
-         this.food_input = this.search_input;
       },
+      SubmitFood() {
+         this.$emit('foodInput', this.food_input);
+      }
    },
 };

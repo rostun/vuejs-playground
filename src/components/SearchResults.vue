@@ -9,7 +9,7 @@
 		<div class="pet_result">
 			<p class>Pet Results!</p>
 			<ul class="pet_information">
-				<li v-for="pet in pet_data" :key="pet.key">{{ pet.text }}</li>
+				<li v-for="pet in filterPets()" :key="pet.key">{{ pet.text }}</li>
 			</ul>
 		</div>
 	</div>
