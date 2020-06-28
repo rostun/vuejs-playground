@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "webpack-dev-server --config build/webpack.config.dev.js"
+    "build": "webpack-dev-server --config build/webpack.config.dev.js",
+    "build-prod": "webpack --config build/webpack.config.js"
   },
   "dependencies": {
     "@vue/cli": "^4.3.1",
