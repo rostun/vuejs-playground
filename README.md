@@ -7,4 +7,4 @@ yarn run build
 localhost:8080
 
 ## host
-www.happyhabiticahelper.com
+https://rostun.github.io/happy-habitica-helper/
