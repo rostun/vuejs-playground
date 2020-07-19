@@ -3,10 +3,12 @@ export default {
       pet_data: { type: Object },
       food_data: { type: Object },
       food_input: { type: Object },
+      pet_input: { type: Object },
    },
    data() {
       return {
          pets_filtered: [],
+         food_filtered: [],
       }
    },
    methods: {
