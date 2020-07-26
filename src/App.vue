@@ -2,7 +2,7 @@
 	<div class="full-width center-content font-style">
 		<div class="title">Handy Dandy Habitica Helper</div>
 		<Dashboard @petData="setPetData" @foodData="setFoodData" @foodInput="setFoodInput" @petInput="setPetInput"/>
-		<SearchResults :pet_data="pet_data" :food_data="food_data" :food_input="food_input" :pet_input="pet_input" />
+		<SearchResults :filtered_pet_data="filtered_pet_data" :filtered_food_data="filtered_food_data" />
 	</div>
 </template>
 
@@ -15,6 +15,8 @@ export default {
       return {
 			pet_data: {},
 			food_data: {},
+			filtered_pet_data: [],
+			filtered_food_data: [],
 			food_input: null,
 			pet_input: null,
       }
@@ -30,12 +32,35 @@ export default {
 		setFoodData(food) {
 			this.food_data = food; 
 		},
-		setFoodInput(input) {
-			this.food_input = input;
-		},
 		setPetInput(input) {
 			this.pet_input = input;
-		}
+			this.setFilteredData('pet');
+		},
+		setFoodInput(input) {
+			this.food_input = input;
+			this.setFilteredData('food');
+		},
+		setFilteredData(type) {
+         const _foods = Object.values(this.food_data);
+			const _pets = Object.values(this.pet_data);
+			
+         if(!_foods.length || this.food_input === null) return [];
+			if(!_pets.length || this.food_input === null) return [];
+
+			if(type === 'food') {
+				if(this.food_input.key === 'Saddle'){
+					this.filtered_pet_data = this.pet_data;
+					return;
+				} 
+
+				this.filtered_pet_data = _pets.filter((pet) =>{
+					if(pet.type === 'special') return false;
+					return pet.potion.toLowerCase() === this.food_input.target.toLowerCase()
+				});
+				
+				this.filtered_food_data = _foods.filter((food) => food.key === this.food_input.key);
+			}
+      },
 	}
 };
 </script>
