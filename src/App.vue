@@ -44,8 +44,8 @@ export default {
          const _foods = Object.values(this.food_data);
 			const _pets = Object.values(this.pet_data);
 			
-         if(!_foods.length || this.food_input === null) return [];
-			if(!_pets.length || this.food_input === null) return [];
+         if(type === 'food' && !_foods.length) return [];
+			if(type === 'pet' && !_pets.length) return [];
 
 			if(type === 'food') {
 				if(this.food_input.key === 'Saddle'){
@@ -59,6 +59,10 @@ export default {
 				});
 				
 				this.filtered_food_data = _foods.filter((food) => food.key === this.food_input.key);
+			}
+			if(type === 'pet') {
+				this.filtered_pet_data = _pets.filter((pet) => pet.key === this.pet_input.key);
+				console.log('filtered pet data: ', this.filtered_pet_data);
 			}
       },
 	}
