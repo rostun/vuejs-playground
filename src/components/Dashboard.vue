@@ -13,7 +13,7 @@
 			<div class="search_pet">
 				<select v-model="pet_input">
 					<option :value="null" disabled>Select Pet</option>
-					<option v-for="option in pet_options" v-bind:value="{key: option.key, target: option.target, text: option.text}" :key="option.key">
+					<option v-for="option in pet_options" v-bind:value="{key: option.key, potion: option.potion, text: option.text}" :key="option.key">
 						{{ option.text }}
 					</option>
 				</select>

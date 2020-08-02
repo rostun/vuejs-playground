@@ -61,8 +61,12 @@ export default {
 				this.filtered_food_data = _foods.filter((food) => food.key === this.food_input.key);
 			}
 			if(type === 'pet') {
+				this.filtered_food_data = _foods.filter((food) => {
+					if(food.key === 'Saddle') return true;
+					return this.pet_input.potion.toLowerCase() === food.target.toLowerCase();
+				});
+
 				this.filtered_pet_data = _pets.filter((pet) => pet.key === this.pet_input.key);
-				console.log('filtered pet data: ', this.filtered_pet_data);
 			}
       },
 	}
