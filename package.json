@@ -6,7 +6,7 @@
   "dependencies": {
     "@vue/cli": "^4.3.1",
     "axios": "^0.21.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
     "vue-server-renderer": "^2.6.11"
